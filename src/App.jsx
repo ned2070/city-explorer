@@ -5,6 +5,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CityLocation from "./components/CityLocation";
+import CityMap from "./components/CityMap";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 
@@ -47,9 +48,10 @@ function App() {
       </form>
       <CityLocation
         display_name={city.display_name}
-        latitude={city.lat}
-        longitude={city.lon}
+        lat={city.lat}
+        lon={city.lon}
       />
+      <CityMap API_KEY={API_KEY} lat={city.lat} lon={city.lon} />
       <Footer />
     </div>
   );
